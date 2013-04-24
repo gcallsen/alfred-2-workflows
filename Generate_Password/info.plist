@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>537D1EB2-FBE5-4B2F-BE35-161C7971D21A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7BF9DF19-39E9-4648-920D-79DEB1062218</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DEEDE0F7-F8DA-45EB-8AF3-FC7BD4F5EF3D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EF8C226E-ECF6-4E23-9881-C9FE8E612513</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>537D1EB2-FBE5-4B2F-BE35-161C7971D21A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Gilman</string>
+	<key>description</key>
+	<string>Generate a random 8-16 character password to clipboard</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Generate Password</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>charArray=( 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z' 'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z' )
+
+numArray=( 0 1 2 3 4 5 6 7 8 9 )
+
+specialArray=( "!" "@" "#" "$" "%" "*" "[" "]" ";" "?" "(" ")" )
+ 
+length=$((RANDOM%8+8))
+
+for (( x=0;x&lt;$length;x++ )); do
+	type=$((RANDOM%3))
+	if [ $type -eq 0 ]; then
+		char=$((RANDOM%52))
+		newChar=${charArray[$char]}
+	elif [ $type -eq 1 ]; then
+		char=$((RANDOM%10))
+		newChar=${numArray[$char]}
+	elif [ $type -eq 2 ]; then
+		char=$((RANDOM%12))
+		newChar=${specialArray[$char]}
+	fi
+	final=$final$newChar
+done
+
+echo $final | tr -d '\n' | pbcopy
+echo $final</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>537D1EB2-FBE5-4B2F-BE35-161C7971D21A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>DEEDE0F7-F8DA-45EB-8AF3-FC7BD4F5EF3D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>pwd</string>
+				<key>subtext</key>
+				<string>Place password into clipboard</string>
+				<key>text</key>
+				<string>Create A Password</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>EF8C226E-ECF6-4E23-9881-C9FE8E612513</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Password created successfully and copied to clipboard</string>
+				<key>title</key>
+				<string>Password Created</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>7BF9DF19-39E9-4648-920D-79DEB1062218</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Creates a new password and copies that pwd to your clipboard.</string>
+	<key>uidata</key>
+	<dict>
+		<key>537D1EB2-FBE5-4B2F-BE35-161C7971D21A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>7BF9DF19-39E9-4648-920D-79DEB1062218</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>DEEDE0F7-F8DA-45EB-8AF3-FC7BD4F5EF3D</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>EF8C226E-ECF6-4E23-9881-C9FE8E612513</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.gcallsen.com</string>
+</dict>
+</plist>
