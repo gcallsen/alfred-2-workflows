@@ -1,6 +1,6 @@
 #!/bin/bash
 for filename in $(ls -d */); do
-  WORKFLOW="filename.alfredworkflow" 
-  zip -r "$WORKFLOW" "$filename"
+  output_filename=$(echo $filename | sed 's/\//'.alfredworkflow'/')
+  zip -r "$output_filename" "$filename"
 done
 
