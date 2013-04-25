@@ -53,31 +53,7 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
-				<string>charArray=( 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z' 'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z' )
-
-numArray=( 0 1 2 3 4 5 6 7 8 9 )
-
-specialArray=( "!" "@" "#" "$" "%" "*" "[" "]" ";" "?" "(" ")" )
- 
-length=$((RANDOM%8+8))
-
-for (( x=0;x&lt;$length;x++ )); do
-	type=$((RANDOM%3))
-	if [ $type -eq 0 ]; then
-		char=$((RANDOM%52))
-		newChar=${charArray[$char]}
-	elif [ $type -eq 1 ]; then
-		char=$((RANDOM%10))
-		newChar=${numArray[$char]}
-	elif [ $type -eq 2 ]; then
-		char=$((RANDOM%12))
-		newChar=${specialArray[$char]}
-	fi
-	final=$final$newChar
-done
-
-echo $final | tr -d '\n' | pbcopy
-echo $final</string>
+				<string>openssl rand -base64 15</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -85,19 +61,6 @@ echo $final</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>537D1EB2-FBE5-4B2F-BE35-161C7971D21A</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>DEEDE0F7-F8DA-45EB-8AF3-FC7BD4F5EF3D</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -140,6 +103,19 @@ echo $final</string>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>7BF9DF19-39E9-4648-920D-79DEB1062218</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>DEEDE0F7-F8DA-45EB-8AF3-FC7BD4F5EF3D</string>
 		</dict>
 	</array>
 	<key>readme</key>
