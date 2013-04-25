@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>294A52DC-6FB9-4549-8665-D58FDE0223F3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>48B228F4-97B9-4B31-9268-9B4814089800</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>48B228F4-97B9-4B31-9268-9B4814089800</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F45E0BE7-E2BB-445C-8232-F889FC6B451E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>86EBBA30-B121-4A3B-8970-098C46ACFAC9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>48B228F4-97B9-4B31-9268-9B4814089800</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Gilman Callsen</string>
+	<key>description</key>
+	<string>Mute system volume via hotkey or keyword</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Volume MUTE</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Mute State: {query}</string>
+				<key>title</key>
+				<string>Mute Toggled</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>F45E0BE7-E2BB-445C-8232-F889FC6B451E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>122</integer>
+				<key>hotmod</key>
+				<integer>8388608</integer>
+				<key>hotstring</key>
+				<string>F1</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>294A52DC-6FB9-4549-8665-D58FDE0223F3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string># Toggle MUTE of System Volumeset curVolume to get volume settingsif output muted of curVolume is false then	set volume with output muted
+	set volume_status to "Muted"else	set volume without output muted
+	set volume_status to "Unmuted"end if
+</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>48B228F4-97B9-4B31-9268-9B4814089800</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>vmute</string>
+				<key>subtext</key>
+				<string>Using Keyword 'vmute'</string>
+				<key>text</key>
+				<string>Mute Volume</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>86EBBA30-B121-4A3B-8970-098C46ACFAC9</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>294A52DC-6FB9-4549-8665-D58FDE0223F3</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>48B228F4-97B9-4B31-9268-9B4814089800</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>86EBBA30-B121-4A3B-8970-098C46ACFAC9</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>F45E0BE7-E2BB-445C-8232-F889FC6B451E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.gcallsen.com</string>
+</dict>
+</plist>
