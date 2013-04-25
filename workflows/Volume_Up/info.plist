@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>A768A565-F0B3-4CA1-A683-11EF803BD6A6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9AAEB41A-8817-445B-9427-604DC3BD73AB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D0D170CF-42DF-4377-8032-B69D1C04AE97</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A768A565-F0B3-4CA1-A683-11EF803BD6A6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EA63DF7C-354F-4F1A-B11B-81DCC6C8694F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A768A565-F0B3-4CA1-A683-11EF803BD6A6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Gilman Callsen</string>
+	<key>description</key>
+	<string>Turn system volume Up</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Volume UP</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>New Percentage (%): {query}</string>
+				<key>title</key>
+				<string>Volume Up</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>9AAEB41A-8817-445B-9427-604DC3BD73AB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>99</integer>
+				<key>hotmod</key>
+				<integer>8388608</integer>
+				<key>hotstring</key>
+				<string>F3</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>D0D170CF-42DF-4377-8032-B69D1C04AE97</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string># Turn System Volume UP# Get current output volume and then increase accordingly# No need to check for status of mute, when you increase# volume it will automatically toggle 'mute' off if presentset curVolume to output volume of (get volume settings)# Work out the new settingif curVolume &lt; 96 then	set newVolume to curVolume + 5else	# Can't go over 100 :)	set newVolume to 100end if# And apply our new volumeset volume output volume newVolume
+
+# Expose newVolume for Alfred notification
+newVolume</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A768A565-F0B3-4CA1-A683-11EF803BD6A6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vup</string>
+				<key>subtext</key>
+				<string>Turn system volume up with keyword 'vup'</string>
+				<key>text</key>
+				<string>Volume UP</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>EA63DF7C-354F-4F1A-B11B-81DCC6C8694F</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>9AAEB41A-8817-445B-9427-604DC3BD73AB</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A768A565-F0B3-4CA1-A683-11EF803BD6A6</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>D0D170CF-42DF-4377-8032-B69D1C04AE97</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>EA63DF7C-354F-4F1A-B11B-81DCC6C8694F</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.gcallsen.com</string>
+</dict>
+</plist>
