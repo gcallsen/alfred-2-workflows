@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>BC2157BB-BD4F-45CA-9070-EBA03EA0D1EB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C4B368D2-ED2A-4083-BBBF-9F247864A857</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DBDD4B86-408A-4CDB-90DD-9E5799C16647</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BC2157BB-BD4F-45CA-9070-EBA03EA0D1EB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F428895D-FE32-4487-8163-201320CBD534</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BC2157BB-BD4F-45CA-9070-EBA03EA0D1EB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Gilman Callsen</string>
+	<key>description</key>
+	<string>Turn system volume down</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Volume DOWN</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string># Turn System Volume DOWN# Get current output volume and then decrease accordingly# No need to check for status of mute, when you decrease# volume it will automatically toggle 'mute' off if presentset curVolume to output volume of (get volume settings)# Work out the new settingif curVolume &gt; 6 then	set newVolume to curVolume - 5else	# Can't go under 0!	set newVolume to 0end if#Apply our new volumeset volume output volume newVolume
+
+# Expose volume state for alfred
+newVolume</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BC2157BB-BD4F-45CA-9070-EBA03EA0D1EB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>New Percentage (%): {query}</string>
+				<key>title</key>
+				<string>Volume Down</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C4B368D2-ED2A-4083-BBBF-9F247864A857</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>120</integer>
+				<key>hotmod</key>
+				<integer>8388608</integer>
+				<key>hotstring</key>
+				<string>F2</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>F428895D-FE32-4487-8163-201320CBD534</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>vdown</string>
+				<key>subtext</key>
+				<string>Turn system volume down with keyword 'vdown'</string>
+				<key>text</key>
+				<string>Volume Down</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>DBDD4B86-408A-4CDB-90DD-9E5799C16647</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>BC2157BB-BD4F-45CA-9070-EBA03EA0D1EB</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C4B368D2-ED2A-4083-BBBF-9F247864A857</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>DBDD4B86-408A-4CDB-90DD-9E5799C16647</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>F428895D-FE32-4487-8163-201320CBD534</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.gcallsen.com</string>
+</dict>
+</plist>
