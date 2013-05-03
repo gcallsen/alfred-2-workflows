@@ -1,2 +1,3 @@
 *.alfredworkflow
 built_workflows/*
+resources/*
