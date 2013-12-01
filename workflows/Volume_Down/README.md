@@ -1,4 +1,7 @@
 # Volume DOWN
+
+Author: Gilman Callsen
+
 This workflow allows you turn your mac system volume DOWN in two ways:
 
 * Keyboard Hotkey (i.e. F2 or a key combination)

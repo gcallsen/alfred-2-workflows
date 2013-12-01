@@ -1,11 +1,14 @@
 # Generate Password
+
+Author: Gilman Callsen
+
 This workflow generates a new password using openssl rand base64.
 This method produces outputs pseudo-random bytes after seeding the random number
 generator once. It performs a base64 encoding on the output.
 
 * Type 'pwd'
   * Optionally, press space bar and type a number to specify the length of your password.
-  * By default it is 15 characters 
+  * By default it is 15 characters
 * New password is copied to your clipboard
 * Paste new password wherever you want it.
 * Make sure to save it!

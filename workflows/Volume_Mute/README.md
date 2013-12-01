@@ -1,4 +1,7 @@
 # Volume MUTE
+
+Author: Gilman Callsen
+
 This workflow allows you toggle the mute state of your system volume by either:
 
 * Keyboard Hotkey (i.e. F1 or a key combination)
